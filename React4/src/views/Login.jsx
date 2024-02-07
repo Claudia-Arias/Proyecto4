@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Home from './Home'
 import "./login.css";
+import Footer from "../components/NavFooter/Footer"
 
 
 
@@ -34,7 +35,7 @@ const [textoBoton,setTextoBoton] =useState("Login");
         </form>
       </div>
     
-
+    <Footer/>
      
     </>
   )
