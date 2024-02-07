@@ -7,7 +7,8 @@ function Sidebar() {
         <>
 
             < div className="box">
-                <h1>caja lateral</h1>
+                <button>Listas</button>
+                <button>Sorteo</button>
 
 
             </div>
