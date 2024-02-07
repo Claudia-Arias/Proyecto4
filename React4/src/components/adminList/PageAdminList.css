@@ -1,0 +1,193 @@
+
+.form_content {
+    display: grid;
+    grid-template-columns: 0.55fr 1fr;
+    gap:2%;
+    padding-top: 2%;
+    padding-left: 0.5%;
+    padding-bottom: 1%;
+    height:fit-content;
+    margin: 1%; 
+}
+
+
+#registro_datos {
+    border-radius: 50px;
+    background-color:#5584AC;
+    display: grid;
+    grid-template-columns: 0.35fr 0.5fr;
+    gap: 10px;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-bottom: 5%;
+    height: max-content;
+    padding-right: 0;
+    
+}
+
+#registro_datos label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+    width: fit-content;
+    font-family: "Segoe UI";
+}
+
+#registro_datos input{
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+}
+
+.colocarBtn{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+
+.btnForm {
+    background-color: #95D1CC;
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    font-family: "Segoe UI";
+    color:#22577E;
+    font-size: medium;
+}
+
+.btnForm:hover{
+    box-shadow: 7px 5px 7px 0px rgba(144, 228, 243, 0.912);
+    color:rgb(221, 78, 26);
+}
+
+#editBtn{
+    font-family: "Segoe UI";
+    color:#ffffff;
+    background-color: #22577E;
+    border-radius: 20px;
+    border: 0;    
+    width: 100%;
+}
+
+#editBtn:hover{
+    background-color: coral;
+    cursor:pointer;
+}
+
+#deleteBtn:hover{
+    background-color: coral;
+    cursor:pointer;
+}
+
+#deleteBtn{
+    font-family: "Segoe UI";
+    color:white;
+    background-color: #16ccae;
+    border-radius: 20px;
+    border: 0;
+    width: 100%;
+}
+
+.mostrarDatos{
+    overflow-x: auto; /* Agrega barra de desplazamiento horizontal si es necesario */
+    overflow-y: auto; /* Agrega barra de desplazamiento vertical si es necesario */
+    margin-right: 2%;
+}
+
+th{
+    font-weight: normal;
+    width: fit-content;
+}
+
+.seccion_datos {
+    border: solid 5px #5584AC;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.tabla_datos {
+    font-size: 14px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: #95D1CC;
+    padding: 0;
+}
+
+
+.tablaDatos td {
+    text-align: left;
+    border: 1px solid #ddd;    
+    font-weight: normal;
+    font-family: "Segoe UI";
+}
+
+
+.tablaDatos {
+    width: 100%;
+}
+
+.tablaHead th {
+    background-color: #5584AC;
+    padding: 0.5%;
+    padding-right: 0;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: white;
+    font-family: "Segoe UI";
+    font-weight: normal; 
+    width:max-content;
+}
+
+
+tbody tr {
+    cursor: pointer;
+    background-color: #95D1CC;
+    width:fit-content;
+    font-family:"Segoe UI";
+    font-weight:normal;
+}
+
+tbody tr:hover {
+    background: white;
+    
+}
+
+#celdaNombre,
+#celdaApellido,
+#celdaApellido2,
+#celdaEmail,
+#celdaTelefono,
+#celdaBtnEditar,
+#celdaBtnEliminar {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: fit-content;
+    margin:0;
+
+}
+
+th, td {
+    width: 1%; /* Dividir igualmente en tres columnas */
+  }
+
+@media screen and ( max-width:430px) {  
+
+    .form_content {
+        display:flex;
+        flex-direction: column;
+        gap:50px;
+        width: 98%;
+        padding-top: 2%;
+        padding-left: 0.5%;
+        padding-bottom: 1%;
+        height:fit-content;
+        margin: 1%;
+    }
+    
+    
+}
