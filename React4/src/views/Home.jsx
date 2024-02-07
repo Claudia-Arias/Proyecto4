@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 import PageAdminList from '../components/adminList/PageAdminList'
+import AdminList from './AdminList'
 
 
 
@@ -13,7 +14,7 @@ function Home() {
     
      {/* <p>hola soy la pagina Home</p> */}
     
-    <PageAdminList />
+     <button type="button" ><Link to="/AdminList">Administrar Lista</Link></button>
 
 
     </>
