@@ -1,0 +1,23 @@
+.box {
+    width: 200px;
+    background-color: #b6038c;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+/*   
+  .sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #2196f3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  } */
+  
+  .sidebar button:hover {
+    background-color: #0b7dda;
+  }
+  
