@@ -184,9 +184,6 @@ function PageAdminList() {
         });
     };
 
-    function modalBotones2(titulo, texto, icono, danger) {
-
-    };
 
     function getIndex() {
         let index = 1;
