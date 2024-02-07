@@ -1,5 +1,9 @@
+import React from 'react';
 import './Footer.css'
-
+import facebookImage from './img/facebook.png'
+import twitterImage from './img/twiter.png'
+import googleImage from './img/google-mas.png'
+import instagramImage from './img/instagram (1).png'
 
 
 function Footer() {
@@ -25,10 +29,10 @@ function Footer() {
 
         <div className='redesSociales'>
 
-          <img src='./img/facebook.png' alt='Facebook' />
-          <img src='./img/google-mas.png' alt='Google+' />
-          <img src='./img/instagram (1).png' alt="Instagram" />
-          <img src='./img/twiter.png'  alt='Twitter' />
+          <img src= {facebookImage} alt='Facebook' />
+          <img src= {googleImage} alt='Google+' />
+          <img src= {instagramImage} alt="Instagram" />
+          <img src= {twitterImage}  alt='Twitter' />
 
         </div>
 

@@ -24,3 +24,12 @@
 .copyR p{
     font-size: 14px;
 }
+
+.redesSociales{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 4em;
+    height: 4em;
+    margin-right: 22%;
+}
