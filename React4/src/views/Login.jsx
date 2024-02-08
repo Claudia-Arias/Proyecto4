@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Home from './Home'
 import "./login.css";
-import Footer from "../components/NavFooter/Footer"
+import Footer from "../components/NavFooter/Footer";
+import Navbar from '../components/NavFooter/Navbar';
 
 
 
@@ -18,6 +19,7 @@ const [textoBoton,setTextoBoton] =useState("Login");
   }
   return (
     <>
+    <Navbar />
    
       <div className="loginname">
         <h2>Wheel of Doom</h2>
