@@ -8,7 +8,7 @@
     align-items: center;
     flex-wrap: wrap;
     width:97%;
-    height:auto;
+    height:fit-content;
     padding: 20px;
     background-color: cornflowerblue;
     border: solid black 2px;
@@ -29,9 +29,15 @@
 
 .redesSociales{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    width: 4em;
-    height: 4em;
-    margin-right: 22%;
+    width: auto;
+    height: 2em;
+}
+
+.redesSociales img{
+    margin-right: 1em;
+}
+
+.redesSociales img:hover{
+    transform: scale(1.1);
 }
