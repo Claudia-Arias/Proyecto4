@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     left: 0;
     align-items: center;
@@ -14,26 +14,48 @@
     border: solid black 2px;
     border-radius: 10px;
 }
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
-    width: 50px;
+    width: 100px;
     height: auto;
     margin-right: 10px;
     border-radius: 50%;
 }
 
 .logo span {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-family: cursive;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
+    transition: font-size 0.8s ease;
 }
 
+.logo span:hover{
+    cursor: pointer;
+    color: rgb(252, 239, 124);
+    font-size: 3rem;
+}
+
+.nav-buttons{
+    display: flex;
+}
 .nav-buttons button {
     font-family: cursive;
-    margin-left: 10px;
+    margin-left: 20px;
     padding: 8px 12px;
     background-color: pink;
     border: none;
     cursor: pointer;
     border-radius: 10px;
     color: white;
+}
+
+.nav-buttons button:hover{
+    background-color: rgb(252, 239, 124);
+    color: cornflowerblue;
+    border: solid pink 2px;
 }

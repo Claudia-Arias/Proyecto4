@@ -11,12 +11,11 @@ function Navbar() {
     <nav className='navbar'>
         <div className='logo'>
         <img src= {Logo} alt='Arrabal School' />
-            {/* <img src="./img/logo.png" alt="Arrabal School" /> */}
             <span>Arrabal School</span>
         </div>
         <div className='nav-buttons'>
             <button>Inicio</button>
-            <button>Home</button>
+            <button>Gestor de Listas</button>
             <button>Cerrar Sesion</button>
         </div>
     </nav>
