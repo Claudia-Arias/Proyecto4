@@ -18,11 +18,13 @@
 
 .textoFooter p{
     margin: 10px 0;
+    font-family: cursive;
     font-size: 14px;
 }
 
 .copyR p{
     font-size: 14px;
+    font-family: cursive;
 }
 
 .redesSociales{
