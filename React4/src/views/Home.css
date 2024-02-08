@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction:row;
+
+    width: 100%;
+}
+
+.containerLeft{
+    background-color: blue;
+}
+
+.containerRight{
+    background-color: crimson;
+}

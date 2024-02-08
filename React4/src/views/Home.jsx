@@ -1,18 +1,26 @@
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
-import WheelComponent from '../components/Wheel/WheelComponent'
 
 
 
 function Home() {
-  
+
 
   return (
     <>
     
      <p>hola soy la pagina Home</p>
-    <WheelComponent/>
+     <button type='button'>
+      <Link to="/AdminList">Ir a About</Link>
+     </button>
+
+     <button type='button'>
+      <Link to="/Raffle">Ir a About</Link>
+     </button>
+    
   
+
+      {/* <p>hola soy la pagina Home</p> */}
 
 
     </>
