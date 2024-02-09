@@ -7,10 +7,12 @@
 th{
     font-weight: normal;
     width: fit-content;
+    border: solid white 1px;
+    border-radius: 15%;;
 }
 
 .seccion_datos {
-    border: solid 5px #5584AC;
+    border: solid 2px black;
     padding: 0;
     overflow-x: auto;
     overflow-y: auto;
@@ -28,9 +30,9 @@ th{
 
 .tablaDatos td {
     text-align: left;
-    border: 1px solid #ddd;    
+    border: 1px solid black;    
     font-weight: normal;
-    font-family: "Segoe UI";
+    font-family: cursive;
 }
 
 
@@ -42,10 +44,11 @@ th{
     background-color: #5584AC;
     padding: 0.5%;
     padding-right: 0;
-    text-align: left;
-    border: 1px solid #ddd;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
     color: white;
-    font-family: "Segoe UI";
+    font-family: cursive;
     font-weight: normal; 
     width:max-content;
 }
@@ -53,9 +56,9 @@ th{
 
 tbody tr {
     cursor: pointer;
-    background-color: #95D1CC;
+    background-color: cornflowerblue;
     width:fit-content;
-    font-family:"Segoe UI";
+    font-family:cursive;
     font-weight:normal;
 }
 

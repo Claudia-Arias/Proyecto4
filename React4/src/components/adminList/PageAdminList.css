@@ -13,8 +13,9 @@
 
 
 #registro_datos {
+    border: solid black 2px;
     border-radius: 50px;
-    background-color:#5584AC;
+    background-color:cornflowerblue;
     display: grid;
     grid-template-columns: 0.35fr 0.5fr;
     gap: 10px;
@@ -23,6 +24,7 @@
     padding-bottom: 5%;
     height: max-content;
     padding-right: 0;
+    font-family: cursive;
     
 }
 
@@ -31,7 +33,7 @@
     margin-bottom: 5px;
     color: white;
     width: fit-content;
-    font-family: "Segoe UI";
+    font-family: cursive;
 }
 
 #registro_datos input{
@@ -48,45 +50,45 @@
 
 
 .btnForm {
-    background-color: #95D1CC;
-    border: none;
+    background-color: pink;
+    border: solid white 2px;
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    font-family: "Segoe UI";
-    color:#22577E;
+    font-family: cursive;
+    color:white;
     font-size: medium;
 }
 
 .btnForm:hover{
     box-shadow: 7px 5px 7px 0px rgba(144, 228, 243, 0.912);
-    color:rgb(221, 78, 26);
+    color:rgb(252,239,124);
 }
 
 #editBtn{
-    font-family: "Segoe UI";
+    font-family:cursive;
     color:#ffffff;
-    background-color: #22577E;
-    border-radius: 20px;
-    border: 0;    
+    background-color: rgb(252,239,124);
+    border-radius: 9px;
+    border: solid 1px rgb(252,239,124);    
     width: 100%;
 }
 
 #editBtn:hover{
-    background-color: coral;
+    background-color: pink;
     cursor:pointer;
 }
 
 #deleteBtn:hover{
-    background-color: coral;
+    background-color: pink;
     cursor:pointer;
 }
 
 #deleteBtn{
-    font-family: "Segoe UI";
+    font-family: cursive;
     color:white;
     background-color: #16ccae;
-    border-radius: 20px;
+    border-radius: 9px;
     border: 0;
     width: 100%;
 }
@@ -103,7 +105,8 @@ th{
 }
 
 .seccion_datos {
-    border: solid 5px #5584AC;
+    border: solid 5px black;
+    border-radius: 2%;
     padding: 0;
     overflow-x: auto;
     overflow-y: auto;
@@ -121,9 +124,10 @@ th{
 
 .tablaDatos td {
     text-align: left;
-    border: 1px solid #ddd;    
+    border: 1px solid #ddd;
+    border-radius: 4%;    
     font-weight: normal;
-    font-family: "Segoe UI";
+    font-family:cursive;
 }
 
 
@@ -132,13 +136,13 @@ th{
 }
 
 .tablaHead th {
-    background-color: #5584AC;
+    background-color: yellow;
     padding: 0.5%;
     padding-right: 0;
     text-align: left;
-    border: 1px solid #ddd;
-    color: white;
-    font-family: "Segoe UI";
+    border: 1px solid red;
+    color: red;
+    font-family: cursive;
     font-weight: normal; 
     width:max-content;
 }
@@ -146,14 +150,14 @@ th{
 
 tbody tr {
     cursor: pointer;
-    background-color: #95D1CC;
+    background-color: yellow;
     width:fit-content;
-    font-family:"Segoe UI";
+    font-family:cursive;
     font-weight:normal;
 }
 
 tbody tr:hover {
-    background: white;
+    background: rebeccapurple;
     
 }
 
