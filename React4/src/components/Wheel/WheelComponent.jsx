@@ -23,7 +23,7 @@ const data = [
 
   return (
     <>
-      <Wheel
+      <Wheel className="wheel"
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
         data={data}
@@ -32,7 +32,7 @@ const data = [
           setMustSpin(false);
         }}
       />
-      <button onClick={handleSpinClick}>SPIN</button>
+      <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
     </>
   )
 //}
