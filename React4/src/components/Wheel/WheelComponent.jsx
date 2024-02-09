@@ -4,8 +4,8 @@ import  './WheelComponent.css';
 
 function WheelComponent ({ selectedUser}) {
 const data = [
-  { option: '0' },
-  { option: '1' },
+  { option: '0', style: { backgroundColor: 'green', textColor: 'black'} },
+  { option: '1', style: { backgroundColor: 'white' } },
   { option: '2' },
   { option: '3' },
   { option: '4' },
@@ -14,6 +14,15 @@ const data = [
 const [objetoDato, setObjetoDato] = useState({ option: ''});
 
 const [selectedUserIds, setSelectedUserIds] = useState([objetoDato]);//array donde guardamos los id de los usuarios seleccionados
+
+// //Del Repositorio de la ruleta
+// interface WheelData {
+//   option?: string;
+//   image?: ImageProps;
+//   style?: StyleType; // Optional
+//   optionSize?: number; // Optional
+// }
+
 
 
 useEffect(() => {
@@ -55,10 +64,13 @@ console.log(selectedUserIds);
         prizeNumber={prizeNumber}
         //  data={data}
        data={selectedUserIds}
+       backgroundColors={['pink', 'white']}
+       textColor='black'
         
         onStopSpinning={() => {
           setMustSpin(false);
         }}
+        
       />
       <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
     </>
@@ -66,3 +78,29 @@ console.log(selectedUserIds);
 //}
 }
 export default WheelComponent
+
+
+
+
+
+// const selectedUserIdsInitial = [];
+
+// function WheelComponent({ selectedUser }) {
+//   const [selectedUserIds, setSelectedUserIds] = useState(selectedUserIdsInitial);
+//   const [mustSpin, setMustSpin] = useState(false);
+//   const [prizeNumber, setPrizeNumber] = useState(0);
+
+//   useEffect(() => {
+//     if (selectedUser) {
+//       setSelectedUserIds(prevIds => [...prevIds, { option: selectedUser.id }]);
+//     }
+//   }, [selectedUser]);
+
+//   console.log(selectedUserIds);
+//   const handleSpinClick = () => {
+//     if (!mustSpin) {
+//       const newPrizeNumber = Math.floor(Math.random() * selectedUserIds.length);
+//       setPrizeNumber(newPrizeNumber);
+//       setMustSpin(true);
+//     }
+//   };
