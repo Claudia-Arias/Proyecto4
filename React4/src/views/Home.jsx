@@ -11,11 +11,11 @@ function Home() {
     
      <p>hola soy la pagina Home</p>
      <button type='button'>
-      <Link to="/AdminList">Ir a About</Link>
+      <Link to="/AdminList">Administrador Listas</Link>
      </button>
 
      <button type='button'>
-      <Link to="/Raffle">Ir a About</Link>
+      <Link to="/Raffle">Sorteo</Link>
      </button>
     
   

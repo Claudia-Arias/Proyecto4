@@ -13,7 +13,7 @@ const data = [
 
 const [objetoDato, setObjetoDato] = useState({ option: ''});
 
-const [selectedUserIds, setSelectedUserIds] = useState([]);//array donde guardamos los id de los usuarios seleccionados
+const [selectedUserIds, setSelectedUserIds] = useState([objetoDato]);//array donde guardamos los id de los usuarios seleccionados
 
 
 useEffect(() => {
@@ -31,6 +31,8 @@ useEffect(() => {
   }
 }, [selectedUser]);
 
+
+console.log(selectedUserIds);
 
 //export default () => {
   const [mustSpin, setMustSpin] = useState(false);
@@ -51,8 +53,8 @@ useEffect(() => {
       <Wheel className="wheel"
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
-         data={data}
-       
+        //  data={data}
+       data={selectedUserIds}
         
         onStopSpinning={() => {
           setMustSpin(false);
