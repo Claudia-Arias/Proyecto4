@@ -1,10 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-// import React, { useState } from 'react';
-import Sidebar from '../components/SideBar/Sidebar' 
-// import View1 from './View1'; // Importa tus componentes de vista
-// import View2 from './View2';
-import "./home.css";
+import {Link} from 'react-router-dom'
+
 
 
 function Home() {
@@ -12,11 +8,19 @@ function Home() {
 
   return (
     <>
-<body>
-      <p>hola soy la pagina Home</p>
-<Sidebar/> 
-</body>
+    
+     <p>hola soy la pagina Home</p>
+     <button type='button'>
+      <Link to="/AdminList">Ir a About</Link>
+     </button>
 
+     <button type='button'>
+      <Link to="/Raffle">Ir a About</Link>
+     </button>
+    
+  
+
+      {/* <p>hola soy la pagina Home</p> */}
 
 
     </>

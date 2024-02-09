@@ -1,0 +1,37 @@
+import WheelComponent from '../components/Wheel/WheelComponent'
+import ListAll from '../components/ListAll/ListAll'
+import { useState } from 'react'
+import {Link} from 'react-router-dom'
+
+function Raffle() {
+
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  function handleRowClick(user) {
+    setSelectedUser(user); // Actualiza el estado con los datos del usuario seleccionado
+  }
+
+    return (
+      <>
+      
+       <p>hola soy la pagina Home</p>
+      <WheelComponent selectedUser={selectedUser} />
+    
+  
+        {/* <p>hola soy la pagina Home</p> */}
+  
+  
+        <div className='container'>
+          <div className='containerLeft'>
+            <button type="button" ><Link to="/AdminList">Administrar Lista</Link></button>
+          </div>
+          <div className='containerRigth'>
+            <ListAll onRowClick={handleRowClick}/>
+          </div>
+        </div>
+  
+      </>
+    )
+  }
+  
+  export default Raffle

@@ -1,0 +1,43 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width:97%;
+    height:fit-content;
+    padding: 20px;
+    background-color: cornflowerblue;
+    border: solid black 2px;
+    border-radius: 10px;
+    color: white;
+}
+
+.textoFooter p{
+    margin: 10px 0;
+    font-family: cursive;
+    font-size: 14px;
+}
+
+.copyR p{
+    font-size: 14px;
+    font-family: cursive;
+}
+
+.redesSociales{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: 2em;
+}
+
+.redesSociales img{
+    margin-right: 1em;
+}
+
+.redesSociales img:hover{
+    transform: scale(1.1);
+}
