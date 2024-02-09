@@ -4,7 +4,7 @@ import { UserService } from "../adminList/userService";
 
 
 
-function ListAll() {
+function ListAll({ onRowClick }) {
 
     const [userObject, setUserObject] = useState({
         id: "0",
@@ -24,7 +24,7 @@ function ListAll() {
         let users = await UserService.getAllUsers();
         //ahora actualizo el estado de userList con esta variable (usuarios)
         setUserListObject(users);
-        setEditable(false);
+        
     };
 
     //LLamo a getData() para traer los datos
@@ -47,7 +47,7 @@ function ListAll() {
                         <tbody>
                             {
                                 userListObject.map((user, index) => (
-                                    <tr key={index} id={index}>
+                                    <tr key={index} id={index} onClick={() => onRowClick(user)}>
                                         <th>{user.nombre}</th>
                                         <th>{user.apellido}</th>
                                         <th>{user.apellido2}</th>
