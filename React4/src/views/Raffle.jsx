@@ -5,12 +5,17 @@ import {Link} from 'react-router-dom'
 
 function Raffle() {
 
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  function handleRowClick(user) {
+    setSelectedUser(user); // Actualiza el estado con los datos del usuario seleccionado
+  }
 
     return (
       <>
       
        <p>hola soy la pagina Home</p>
-      <WheelComponent/>
+      <WheelComponent selectedUser={selectedUser} />
     
   
         {/* <p>hola soy la pagina Home</p> */}
@@ -21,7 +26,7 @@ function Raffle() {
             <button type="button" ><Link to="/AdminList">Administrar Lista</Link></button>
           </div>
           <div className='containerRigth'>
-            <ListAll />
+            <ListAll onRowClick={handleRowClick}/>
           </div>
         </div>
   
