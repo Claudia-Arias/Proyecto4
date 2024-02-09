@@ -27,6 +27,12 @@ const [selectedUserIds, setSelectedUserIds] = useState([objetoDato]);//array don
 
 useEffect(() => {
   // Cada vez que objetoDato cambie, actualizamos selectedUserIds
+  if (objetoDato.option==='') { 
+    const modifiedObjetoDato = { ...objetoDato };
+
+  // Realizar las modificaciones necesarias en el objetoDato
+  modifiedObjetoDato.option = selectedUser.id;
+  }
   setSelectedUserIds(prevIds => [...prevIds, objetoDato]);
 }, [objetoDato]);
 
