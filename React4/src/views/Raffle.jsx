@@ -5,7 +5,16 @@ import {Link} from 'react-router-dom'
 
 function Raffle() {
 
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedUser, setSelectedUser] = useState({
+    id: "77",
+    nombre: "",
+    apellido: "",
+    apellido2: "",
+    email: "",
+    telefono: ""
+});
+  // const [selectedUser, setSelectedUser] = useState(null);
+  
 
   function handleRowClick(user) {
     setSelectedUser(user); // Actualiza el estado con los datos del usuario seleccionado
