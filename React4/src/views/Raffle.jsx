@@ -23,13 +23,8 @@ function Raffle() {
     return (
       <>
       
-       <p>hola soy la pagina Home</p>
+       <p>Bienvenidos al sorteo</p>
       <WheelComponent selectedUser={selectedUser} />
-    
-  
-        {/* <p>hola soy la pagina Home</p> */}
-  
-  
         <div className='container'>
           <div className='containerLeft'>
             <button type="button" ><Link to="/AdminList">Administrar Lista</Link></button>

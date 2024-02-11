@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
     
-     <p>hola soy la pagina Home</p>
+     <p>Selecciona una opción</p>
      <button type='button'>
       <Link to="/AdminList">Administrador Listas</Link>
      </button>
