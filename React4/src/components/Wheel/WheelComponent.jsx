@@ -15,8 +15,9 @@ function WheelComponent({ selectedUser }) {
 
   const [selectedUserIds, setSelectedUserIds] = useState([objetoDato]);//array donde guardamos los id de los usuarios seleccionados
 
-
   const [primero, SetPrimero] = useState(true);
+
+  const [contador, setContador] = useState(0);
 
   // //Del Repositorio de la ruleta
   // interface WheelData {
@@ -32,107 +33,104 @@ function WheelComponent({ selectedUser }) {
     // Cada vez que objetoDato cambie, actualizamos selectedUserIds
 
     if (objetoDato.option != '') {
-      if(primero){
+      if (primero) {
         //si es el primer alumno seleccionado, "vaciamos" el array de objetos e introducimos solo ese usuario, para quitar el espacio blanco inicial
         setSelectedUserIds([objetoDato]);
         SetPrimero(false);
-      }else{
+        //aumentamos el contador ya que acabamos de añadir un alumno a la selección
+        let auxContador = contador + 1;
+        setContador(auxContador);
+      } else {
         //primero comprobamos que el usuario seleccionado no esté ya añanido a la lista de ids de usuarios, si es asi lo eliminamos de la lista
-        if(selectedUserIds.some(item => item.option === objetoDato.option)){
+        if (selectedUserIds.some(item => item.option === objetoDato.option)) {
           // Si ya está presente, eliminarlo del array
           const nuevoArray = selectedUserIds.filter(item => item.option !== objetoDato.option);
           setSelectedUserIds(nuevoArray);
-
-        }else{
+          //el contador de alumnos quitar uno, ya que acabamos de eliminar un alumno de la selección
+          let auxContador = contador - 1;
+          setContador(auxContador);
+        } else {
           setSelectedUserIds(prevIds => [...prevIds, objetoDato]);
+          //aumentamos el contador ya que se ha añadido un alumno
+          let auxContador = contador + 1;
+          setContador(auxContador);
         }
       }
     }
 
   }, [objetoDato]);
 
-// Almacenamos el id del usuario seleccionado en el array cuando seleccionamos un nuevo elemento
-useEffect(() => {
+  // Almacenamos el id del usuario seleccionado en el array cuando seleccionamos un nuevo elemento
+  useEffect(() => {
 
-  if ((selectedUser.id != '77')) {
-    setObjetoDato({ option: selectedUser.id });
+    if ((selectedUser.id != '77')) {
+      setObjetoDato({ option: selectedUser.id });
+    }
+  }, [selectedUser]);
+
+
+
+  console.log(selectedUserIds);
+
+  //export default () => {
+  const [mustSpin, setMustSpin] = useState(false);
+  const [prizeNumber, setPrizeNumber] = useState(0);
+
+  const handleSpinClick = () => {
+    //el sorteo debe tener al menos dos participantes y máximo 10
+    if (contador > 1 && contador < 11) {
+      if (!mustSpin) {
+        const newPrizeNumber = Math.floor(Math.random() * selectedUserIds.length);
+        setPrizeNumber(newPrizeNumber);
+        setMustSpin(true);
+      }
+    } else {
+      window.alert("El nº de alumnos seleccionados debe estar entre 2 y 20 incluidos, revise el nº de alumnos añádidos");
+    }
   }
-}, [selectedUser]);
 
+  //console.log(selectedUserIds);
 
+  // Función para recuperar el alumno seleccionado
+  const getSelectedElement = () => {
 
-console.log(selectedUserIds);
+    if (selectedUserIds && selectedUserIds.length > 0) {
+      return selectedUserIds[prizeNumber].option;
 
-//export default () => {
-const [mustSpin, setMustSpin] = useState(false);
-const [prizeNumber, setPrizeNumber] = useState(0);
-
-const handleSpinClick = () => {
-  if (!mustSpin) {
-    const newPrizeNumber = Math.floor(Math.random() * data.length);
-    setPrizeNumber(newPrizeNumber);
-    setMustSpin(true);
+    }
+    return null;
   }
-}
 
-//console.log(selectedUserIds);
-
-// Función para recuperar el alumno seleccionado
-const getSelectedElement = () => {
-  if (selectedUserIds && selectedUserIds.length > 0) {
-    return selectedUserIds[prizeNumber].option;
-  
+  function showUserWinner() {
+    //el sorteo solo se realiza si tenemos entre 2 y 10 usuarios seleccionados, comprobarlo, ya que si no es asi no tenemos nada que mostrar
+    if (contador > 1 && contador < 11) {
+      const seleccionado = getSelectedElement();//recuperamos id del alumno seleccionado
+      window.alert("el alumno seleccionado es: " + seleccionado);
+    }
   }
-  return null;
-}
 
+  return (
+    <>
+      <Wheel className="wheel"
+        mustStartSpinning={mustSpin}
+        prizeNumber={prizeNumber}
+        //  data={data}
+        data={selectedUserIds}
+        backgroundColors={['pink', 'white']}
+        textColor='black'
 
-return (
-  <>
-    <Wheel className="wheel"
-      mustStartSpinning={mustSpin}
-      prizeNumber={prizeNumber}
-      //  data={data}
-      data={selectedUserIds}
-      backgroundColors={['pink', 'white']}
-      textColor='black'
+        onStopSpinning={() => {
+          setMustSpin(false);
+          showUserWinner();
+        }}
 
-      onStopSpinning={() => {
-        setMustSpin(false);
-        const seleccionado = getSelectedElement();//recuperamos id del alumno seleccionado
-        window.alert("el alumno seleccionado es: "+seleccionado);
-      }}
-
-    />
-    <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
-  </>
-)
+      />
+      <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
+    </>
+  )
   //}
 }
 export default WheelComponent
 
 
 
-
-
-// const selectedUserIdsInitial = [];
-
-// function WheelComponent({ selectedUser }) {
-//   const [selectedUserIds, setSelectedUserIds] = useState(selectedUserIdsInitial);
-//   const [mustSpin, setMustSpin] = useState(false);
-//   const [prizeNumber, setPrizeNumber] = useState(0);
-
-//   useEffect(() => {
-//     if (selectedUser) {
-//       setSelectedUserIds(prevIds => [...prevIds, { option: selectedUser.id }]);
-//     }
-//   }, [selectedUser]);
-
-//   console.log(selectedUserIds);
-//   const handleSpinClick = () => {
-//     if (!mustSpin) {
-//       const newPrizeNumber = Math.floor(Math.random() * selectedUserIds.length);
-//       setPrizeNumber(newPrizeNumber);
-//       setMustSpin(true);
-//     }
-//   };
