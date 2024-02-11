@@ -1,89 +1,113 @@
 import React, { useState, useEffect } from 'react'
 import { Wheel } from 'react-custom-roulette'
-import  './WheelComponent.css';
+import './WheelComponent.css';
 
-function WheelComponent ({ selectedUser}) {
-const data = [
-  { option: '0', style: { backgroundColor: 'green', textColor: 'black'} },
-  { option: '1', style: { backgroundColor: 'white' } },
-  { option: '2' },
-  { option: '3' },
-  { option: '4' },
-]
+function WheelComponent({ selectedUser }) {
+  const data = [
+    { option: '0', style: { backgroundColor: 'green', textColor: 'black' } },
+    { option: '1', style: { backgroundColor: 'white' } },
+    { option: '2' },
+    { option: '3' },
+    { option: '4' },
+  ]
 
-const [objetoDato, setObjetoDato] = useState({ option: ''});
+  const [objetoDato, setObjetoDato] = useState({ option: '' });
 
-const [selectedUserIds, setSelectedUserIds] = useState([objetoDato]);//array donde guardamos los id de los usuarios seleccionados
-
-// //Del Repositorio de la ruleta
-// interface WheelData {
-//   option?: string;
-//   image?: ImageProps;
-//   style?: StyleType; // Optional
-//   optionSize?: number; // Optional
-// }
+  const [selectedUserIds, setSelectedUserIds] = useState([objetoDato]);//array donde guardamos los id de los usuarios seleccionados
 
 
+  const [primero, SetPrimero] = useState(true);
 
+  // //Del Repositorio de la ruleta
+  // interface WheelData {
+  //   option?: string;
+  //   image?: ImageProps;
+  //   style?: StyleType; // Optional
+  //   optionSize?: number; // Optional
+  // }
+
+
+
+  useEffect(() => {
+    // Cada vez que objetoDato cambie, actualizamos selectedUserIds
+
+    if (objetoDato.option != '') {
+      if(primero){
+        //si es el primer alumno seleccionado, "vaciamos" el array de objetos e introducimos solo ese usuario, para quitar el espacio blanco inicial
+        setSelectedUserIds([objetoDato]);
+        SetPrimero(false);
+      }else{
+        //primero comprobamos que el usuario seleccionado no esté ya añanido a la lista de ids de usuarios, si es asi lo eliminamos de la lista
+        if(selectedUserIds.some(item => item.option === objetoDato.option)){
+          // Si ya está presente, eliminarlo del array
+          const nuevoArray = selectedUserIds.filter(item => item.option !== objetoDato.option);
+          setSelectedUserIds(nuevoArray);
+
+        }else{
+          setSelectedUserIds(prevIds => [...prevIds, objetoDato]);
+        }
+      }
+    }
+
+  }, [objetoDato]);
+
+// Almacenamos el id del usuario seleccionado en el array cuando seleccionamos un nuevo elemento
 useEffect(() => {
-  // Cada vez que objetoDato cambie, actualizamos selectedUserIds
-  if (objetoDato.option==='') { 
-    const modifiedObjetoDato = { ...objetoDato };
-   if (selectedUser) {
-    // Realizar las modificaciones necesarias en el objetoDato
-  modifiedObjetoDato.option = selectedUser.id;
-   }
 
-  }
-  setSelectedUserIds(prevIds => [...prevIds, objetoDato]);
-}, [objetoDato]);
-
- // Almacenamos el id del usuario seleccionado en el array cuando el componente se monta
- useEffect(() => {
-  if (selectedUser ) {
-
-    setObjetoDato({...objetoDato, option: selectedUser.id});
-    //  // Añade el objetoDato al array selectedUserIds
-    //  setSelectedUserIds(prevIds => [...prevIds, objetoDato]);
+  if ((selectedUser.id != '77')) {
+    setObjetoDato({ option: selectedUser.id });
   }
 }, [selectedUser]);
+
 
 
 console.log(selectedUserIds);
 
 //export default () => {
-  const [mustSpin, setMustSpin] = useState(false);
-  const [prizeNumber, setPrizeNumber] = useState(0);
+const [mustSpin, setMustSpin] = useState(false);
+const [prizeNumber, setPrizeNumber] = useState(0);
 
-  const handleSpinClick = () => {
-    if (!mustSpin) {
-      const newPrizeNumber = Math.floor(Math.random() * data.length);
-      setPrizeNumber(newPrizeNumber);
-      setMustSpin(true);
-    }
+const handleSpinClick = () => {
+  if (!mustSpin) {
+    const newPrizeNumber = Math.floor(Math.random() * data.length);
+    setPrizeNumber(newPrizeNumber);
+    setMustSpin(true);
   }
+}
 
-  console.log(selectedUserIds);
+//console.log(selectedUserIds);
 
-  return (
-    <>
-      <Wheel className="wheel"
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        //  data={data}
-       data={selectedUserIds}
-       backgroundColors={['pink', 'white']}
-       textColor='black'
-        
-        onStopSpinning={() => {
-          setMustSpin(false);
-        }}
-        
-      />
-      <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
-    </>
-  )
-//}
+// Función para recuperar el alumno seleccionado
+const getSelectedElement = () => {
+  if (selectedUserIds && selectedUserIds.length > 0) {
+    return selectedUserIds[prizeNumber].option;
+  
+  }
+  return null;
+}
+
+
+return (
+  <>
+    <Wheel className="wheel"
+      mustStartSpinning={mustSpin}
+      prizeNumber={prizeNumber}
+      //  data={data}
+      data={selectedUserIds}
+      backgroundColors={['pink', 'white']}
+      textColor='black'
+
+      onStopSpinning={() => {
+        setMustSpin(false);
+        const seleccionado = getSelectedElement();//recuperamos id del alumno seleccionado
+        window.alert("el alumno seleccionado es: "+seleccionado);
+      }}
+
+    />
+    <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
+  </>
+)
+  //}
 }
 export default WheelComponent
 
