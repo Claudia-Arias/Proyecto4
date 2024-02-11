@@ -37,13 +37,21 @@ function WheelComponent({ selectedUser }) {
         setSelectedUserIds([objetoDato]);
         SetPrimero(false);
       }else{
-        setSelectedUserIds(prevIds => [...prevIds, objetoDato]);
+        //primero comprobamos que el usuario seleccionado no esté ya añanido a la lista de ids de usuarios, si es asi lo eliminamos de la lista
+        if(selectedUserIds.some(item => item.option === objetoDato.option)){
+          // Si ya está presente, eliminarlo del array
+          const nuevoArray = selectedUserIds.filter(item => item.option !== objetoDato.option);
+          setSelectedUserIds(nuevoArray);
+
+        }else{
+          setSelectedUserIds(prevIds => [...prevIds, objetoDato]);
+        }
       }
     }
 
   }, [objetoDato]);
 
-// Almacenamos el id del usuario seleccionado en el array cuando el componente se monta
+// Almacenamos el id del usuario seleccionado en el array cuando seleccionamos un nuevo elemento
 useEffect(() => {
 
   if ((selectedUser.id != '77')) {
