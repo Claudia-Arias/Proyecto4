@@ -67,7 +67,17 @@ const handleSpinClick = () => {
   }
 }
 
-console.log(selectedUserIds);
+//console.log(selectedUserIds);
+
+// Función para recuperar el alumno seleccionado
+const getSelectedElement = () => {
+  if (selectedUserIds && selectedUserIds.length > 0) {
+    return selectedUserIds[prizeNumber].option;
+  
+  }
+  return null;
+}
+
 
 return (
   <>
@@ -81,6 +91,8 @@ return (
 
       onStopSpinning={() => {
         setMustSpin(false);
+        const seleccionado = getSelectedElement();//recuperamos id del alumno seleccionado
+        window.alert("el alumno seleccionado es: "+seleccionado);
       }}
 
     />
