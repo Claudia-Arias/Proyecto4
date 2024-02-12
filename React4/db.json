@@ -71,6 +71,22 @@
       "apellido2": "Pinocho",
       "email": "pinocho@pepito.com",
       "telefono": "456789009"
+    },
+    {
+      "id": "10",
+      "nombre": "Dumbo",
+      "apellido": "Bambi",
+      "apellido2": "Leon",
+      "email": "reyleon@disney.com",
+      "telefono": "344556778"
+    },
+    {
+      "id": "11",
+      "nombre": "manolito",
+      "apellido": "gafotas",
+      "apellido2": "gafitas",
+      "email": "manolito@gmail.com",
+      "telefono": "234234234"
     }
   ]
 }
