@@ -17,7 +17,7 @@ function WheelComponent({ selectedUser }) {
   //ademas de guardar el id de los seleccionador vamos a guardar el resto de datos para luego poder mostrar el ganador
   const [userList, setUserList] = useState([]);
 
-  const [primero, SetPrimero] = useState(true);
+  const [primero, SetPrimero] = useState(true);//test
 
   const [contador, setContador] = useState(0);
 
