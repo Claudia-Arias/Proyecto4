@@ -48,12 +48,20 @@ function WheelComponent({ selectedUser }) {
       } else {
         //primero comprobamos que el usuario seleccionado no esté ya añanido a la lista de ids de usuarios, si es asi lo eliminamos de la lista
         if (selectedUserIds.some(item => item.option === objetoDato.option)) {
-          // Si ya está presente, eliminarlo del array
-          const nuevoArray = selectedUserIds.filter(item => item.option !== objetoDato.option);
-          setSelectedUserIds(nuevoArray);
-          //el contador de alumnos quitar uno, ya que acabamos de eliminar un alumno de la selección
-          let auxContador = contador - 1;
-          setContador(auxContador);
+          //antes de eliminar el elemento comprobar que no sea el ultimo
+          if (selectedUserIds.length === 1) {
+            //como es el ultimo usuario debemos inicializara el array, pero no dejarlo vacio del todo para que no desaparezca la ruleta
+            setSelectedUserIds([{ option: '' }]);
+            SetPrimero(true);
+          } else {
+            // Si ya está presente, eliminarlo del array
+            const nuevoArray = selectedUserIds.filter(item => item.option !== objetoDato.option);
+            setSelectedUserIds(nuevoArray);
+            //el contador de alumnos quitar uno, ya que acabamos de eliminar un alumno de la selección
+            let auxContador = contador - 1;
+            setContador(auxContador);
+          }
+
         } else {
           setSelectedUserIds(prevIds => [...prevIds, objetoDato]);
           //aumentamos el contador ya que se ha añadido un alumno
@@ -96,17 +104,17 @@ function WheelComponent({ selectedUser }) {
       modalBotones('¡Cuidado!', 'Debe seleccionar entre 2 y 10 alumnos', 'error', true);
     }
   }
-function modalBotones(titulo, texto, icono, danger) {
-        swal({
-            title: titulo,
-            text: texto,
-            icon: icono,
-            buttons: "Continuar",
-            dangerMode: danger,
-            closeOnClickOutside: false,
-            closeOnEsc: false,
-        });
-    };
+  function modalBotones(titulo, texto, icono, danger) {
+    swal({
+      title: titulo,
+      text: texto,
+      icon: icono,
+      buttons: "Continuar",
+      dangerMode: danger,
+      closeOnClickOutside: false,
+      closeOnEsc: false,
+    });
+  };
 
   //console.log(selectedUserIds);
 
@@ -114,7 +122,7 @@ function modalBotones(titulo, texto, icono, danger) {
   const getSelectedElement = () => {
 
     if (selectedUserIds && selectedUserIds.length > 0) {
-      let idSeleccionado =  selectedUserIds[prizeNumber].option;
+      let idSeleccionado = selectedUserIds[prizeNumber].option;
       return userList.find(userList => userList.id === idSeleccionado);
     }
     return null;
@@ -125,28 +133,28 @@ function modalBotones(titulo, texto, icono, danger) {
     if (contador > 1 && contador < 11) {
       const seleccionado = getSelectedElement();//recuperamos id del alumno seleccionado
       // window.alert("el alumno seleccionado es: " + seleccionado.nombre+" "+seleccionado.apellido+" "+seleccionado.apellido2);
-      modalBotones('El ganador es:', seleccionado.nombre+" "+seleccionado.apellido+" "+seleccionado.apellido2,  "success", false);
+      modalBotones('El ganador es:', seleccionado.nombre + " " + seleccionado.apellido + " " + seleccionado.apellido2, "success", false);
     }
   }
 
   return (
     <>
-    <div className='mostrarRuleta'>
-      <Wheel className="wheel"
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        //  data={data}
-        data={selectedUserIds}
-        backgroundColors={['pink', 'white']}
-        textColor='black'
+      <div className='mostrarRuleta'>
+        <Wheel className="wheel"
+          mustStartSpinning={mustSpin}
+          prizeNumber={prizeNumber}
+          //  data={data}
+          data={selectedUserIds}
+          backgroundColors={['pink', 'white']}
+          textColor='black'
 
-        onStopSpinning={() => {
-          setMustSpin(false);
-          showUserWinner();
-        }}
+          onStopSpinning={() => {
+            setMustSpin(false);
+            showUserWinner();
+          }}
 
-      />
-      <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
+        />
+        <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
       </div>
     </>
   )
