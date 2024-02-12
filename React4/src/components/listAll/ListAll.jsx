@@ -72,6 +72,9 @@ function ListAll({ onRowClick }) {
           <table id="tablaDatos" className="tablaDatos">
             <thead className="tablaHead">
               <tr>
+              <th name="celdaId" id="celdaId">
+                  ID&nbsp;&nbsp;&nbsp;&nbsp;
+                </th>
                 <th name="celdaName" id="celdaNombre">
                   Nombre
                 </th>
@@ -93,6 +96,7 @@ function ListAll({ onRowClick }) {
               {userListObject.map((user, index) => (
                 // <tr key={index} id={index} onClick={() => onRowClick(user)}>
                 <tr key={index} id={index} onClick={() => handleRowClick(user, index)}>
+                  <th>{user.id}</th>
                   <th>{user.nombre}</th>
                   <th>{user.apellido}</th>
                   <th>{user.apellido2}</th>

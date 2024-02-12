@@ -53,6 +53,9 @@ function WheelComponent({ selectedUser }) {
             //como es el ultimo usuario debemos inicializara el array, pero no dejarlo vacio del todo para que no desaparezca la ruleta
             setSelectedUserIds([{ option: '' }]);
             SetPrimero(true);
+            //disminuer el contador 
+            let auxContador = contador - 1;
+        setContador(auxContador);
           } else {
             // Si ya está presente, eliminarlo del array
             const nuevoArray = selectedUserIds.filter(item => item.option !== objetoDato.option);
