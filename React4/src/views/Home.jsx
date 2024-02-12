@@ -1,30 +1,35 @@
-import { useState } from 'react'
-import {Link} from 'react-router-dom'
-
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Footer from "../components/NavFooter/Footer";
+import Navbar from "../components/NavFooter/Navbar";
+import fondoEscuela from "../imagenes/fondoEscuela.png";
+import "./Home.css";
 
 function Home() {
-
-
   return (
     <>
-    
-     <p>Selecciona una opción</p>
-     <button type='button'>
-      <Link to="/AdminList">Administrador Listas</Link>
-     </button>
+      <Navbar />
+      <div className="contenedorPrincipal">
+        {/* <img
+          src={fondoEscuela}
+          alt="Foto de la escuela"
+          className="fondoEscuela"
+        ></img> */}
 
-     <button type='button'>
-      <Link to="/Raffle">Sorteo</Link>
-     </button>
-    
-  
+        <div className="contenido">
+          <h1>Selecciona una opción</h1>
+          <button className="boton"  type="button">
+            <Link to="/AdminList">Administrador Listas</Link>
+          </button>
 
-      {/* <p>hola soy la pagina Home</p> */}
-
-
+          <button className="boton" type="button">
+            <Link to="/Raffle">Sorteo</Link>
+          </button>
+        </div>
+      </div>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

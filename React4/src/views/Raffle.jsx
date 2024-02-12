@@ -2,6 +2,7 @@ import WheelComponent from '../components/Wheel/WheelComponent'
 import ListAll from '../components/listAll/ListAll'
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
+import './Raffle.css'
 
 function Raffle() {
 
@@ -22,8 +23,7 @@ function Raffle() {
 
     return (
       <>
-      
-       <p>Bienvenidos al sorteo</p>
+      <div className='mostrarRuletaTabla'>
       <WheelComponent selectedUser={selectedUser} />
         <div className='container'>
           <div className='containerLeft'>
@@ -33,7 +33,7 @@ function Raffle() {
             <ListAll onRowClick={handleRowClick}/>
           </div>
         </div>
-  
+        </div>
       </>
     )
   }
