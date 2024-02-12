@@ -60,7 +60,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background: rgb(219, 245, 180);
+   background: rgb(219, 245, 180); 
   color: black;
 }
 
@@ -68,9 +68,9 @@ tbody tr:active {
   background-color: aqua;
 }
 
-.selected{
+/* .selected{
     background-color: yellow;
-}
+} */
 
 #celdaNombre,
 #celdaApellido,
