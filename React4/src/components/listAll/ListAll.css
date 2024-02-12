@@ -1,70 +1,75 @@
-.mostrarDatos{
-    overflow-x: auto; /* Agrega barra de desplazamiento horizontal si es necesario */
-    overflow-y: auto; /* Agrega barra de desplazamiento vertical si es necesario */
-    margin-right: 2%;
+.mostrarDatos {
+  overflow-x: auto; /* Agrega barra de desplazamiento horizontal si es necesario */
+  overflow-y: auto; /* Agrega barra de desplazamiento vertical si es necesario */
+  margin-right: 2%;
 }
 
-th{
-    font-weight: normal;
-    width: fit-content;
-    border: solid white 1px;
-    border-radius: 15%;;
+th {
+  font-weight: normal;
+  width: fit-content;
+  border: solid white 1px;
+  border-radius: 15%;
 }
 
 .seccion_datos {
-    border: solid 2px black;
-    padding: 0;
-    overflow-x: auto;
-    overflow-y: auto;
-    max-height: 500px;
+  border: solid 2px black;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px;
 }
 
 .tabla_datos {
-    font-size: 14px;
-    table-layout: fixed;
-    border-collapse: collapse;
-    background-color: #95D1CC;
-    padding: 0;
+  font-size: 14px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: #95d1cc;
+  padding: 0;
 }
-
 
 .tablaDatos td {
-    text-align: left;
-    border: 1px solid black;    
-    font-weight: normal;
-    font-family: cursive;
+  text-align: left;
+  border: 1px solid black;
+  font-weight: normal;
+  font-family: cursive;
 }
 
-
 .tablaDatos {
-    width: 100%;
+  width: 100%;
 }
 
 .tablaHead th {
-    background-color: #5584AC;
-    padding: 0.5%;
-    padding-right: 0;
-    text-align: center;
-    border: 2px solid white;
-    border-radius: 10px;
-    color: white;
-    font-family: cursive;
-    font-weight: normal; 
-    width:max-content;
+  background-color: #5584ac;
+  padding: 0.5%;
+  padding-right: 0;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  font-family: cursive;
+  font-weight: normal;
+  width: max-content;
 }
 
-
 tbody tr {
-    cursor: pointer;
-    background-color: cornflowerblue;
-    width:fit-content;
-    font-family:cursive;
-    font-weight:normal;
+  cursor: pointer;
+  background-color: cornflowerblue;
+  width: fit-content;
+  font-family: cursive;
+  font-weight: normal;
 }
 
 tbody tr:hover {
-    background: white;
-    
+  background: rgb(219, 245, 180);
+  color: black;
+}
+
+tbody tr:active {
+  background-color: aqua;
+}
+
+.selected{
+    background-color: yellow;
 }
 
 #celdaNombre,
@@ -74,31 +79,28 @@ tbody tr:hover {
 #celdaTelefono,
 #celdaBtnEditar,
 #celdaBtnEliminar {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: fit-content;
-    margin:0;
-
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: fit-content;
+  margin: 0;
 }
 
-th, td {
-    width: 1%; /* Dividir igualmente en tres columnas */
+th,
+td {
+  width: 1%; /* Dividir igualmente en tres columnas */
+}
+
+@media screen and (max-width: 430px) {
+  .form_content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 98%;
+    padding-top: 2%;
+    padding-left: 0.5%;
+    padding-bottom: 1%;
+    height: fit-content;
+    margin: 1%;
   }
-
-@media screen and ( max-width:430px) {  
-
-    .form_content {
-        display:flex;
-        flex-direction: column;
-        gap:50px;
-        width: 98%;
-        padding-top: 2%;
-        padding-left: 0.5%;
-        padding-bottom: 1%;
-        height:fit-content;
-        margin: 1%;
-    }
-    
-    
 }

@@ -30,13 +30,24 @@ function ListAll({ onRowClick }) {
     //LLamo a getData() para traer los datos
     getData();
 
+    function TableRow(props) {
+        const [isSelected, setIsSelected] = useState(false);
+
+        const handleClick = () => {
+            setIsSelected(!isSelected);
+        }
+    };
+
+    TableRow();
+
     return (
         <>
             <section className='mostrarDatos'>
                 <section className="seccion_datos">
                     <table id="tablaDatos" className="tablaDatos" >
                         <thead className="tablaHead">
-                            <tr>
+                            <tr className={isSelected ? 'selected' : ''} onClick={handleClick}>
+                                {props.children}
                                 <th name="celdaName" id="celdaNombre" >Nombre</th>
                                 <th name="celdaApellido1" id="celdaApellido">Apellido 1</th>
                                 <th name="celdaApellido2" id="celdaApellido2">Apellido 2</th>
