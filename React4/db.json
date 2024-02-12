@@ -71,14 +71,6 @@
       "apellido2": "Pinocho",
       "email": "pinocho@pepito.com",
       "telefono": "456789009"
-    },
-    {
-      "id": "10",
-      "nombre": "Dumbo",
-      "apellido": "Bambi",
-      "apellido2": "Leon",
-      "email": "reyleon@disney.com",
-      "telefono": "344556778"
     }
   ]
 }
