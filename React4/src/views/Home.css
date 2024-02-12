@@ -1,14 +1,57 @@
-.container{
+/* .fondoEscuela {
+  background-image: url('../imagenes/fondoEscuela.png');
+  background-color: whitesmoke;
+  height: 99vh; /* Establece la altura del fondo al 100% del alto de la ventana */
+/*width: 99vw; /* Establece el ancho del fondo al 100% del ancho de la ventana */
+/* margin: 0; /* Elimina el margen predeterminado del body */
+/*padding: 0; /* Elimina el padding predeterminado del body */
+/*background-size: cover; /* La imagen de fondo se ajustará para cubrir todo el contenedor */
+/*background-repeat: no-repeat; /* Evita la repetición de la imagen */
+/* } */
+
+/* .contenedorPrincipal {
+    background-image: url('../imagenes/fondoEscuela.png');/* La imagen de fondo se ajustará para cubrir todo el contenedor */
+/*background-repeat: no-repeat;
+    background-size: cover;
+    background-color: purple;
+    height: 600%;
+    width: 300%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+} */
+.contenido {
+    text-align: center; /* Centra el texto */
+    color: white; /* Color del texto */
+    gap: 50px;
+  }
+  
+  .boton {
+    margin-right: 50px; /* Espacio a la derecha */
+    margin-bottom: 50px;
+    font-size: 46px;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: pink;
+    width: 500px; /* Ancho del botón */
+    height: 150px; /* Alto del botón */
+    border-radius: 50px;
+  }
+  
+  .boton:hover{
+      background-color: rgb(252,239,124);
+  }
+  /* .container {
     display: flex;
-    flex-direction:row;
-
+    flex-direction: row;
+  
     width: 100%;
-}
-
-.containerLeft{
+  }
+  
+  .containerLeft {
     background-color: blue;
-}
-
-.containerRight{
+  }
+  
+  .containerRight {
     background-color: crimson;
-}
+  } */

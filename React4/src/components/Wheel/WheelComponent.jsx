@@ -117,6 +117,7 @@ function WheelComponent({ selectedUser }) {
 
   return (
     <>
+    <div className='mostrarRuleta'>
       <Wheel className="wheel"
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
@@ -132,11 +133,10 @@ function WheelComponent({ selectedUser }) {
 
       />
       <button className='buttonLogin' onClick={handleSpinClick}>SPIN</button>
+      </div>
     </>
   )
-  //}
 }
 export default WheelComponent
-
 
 
