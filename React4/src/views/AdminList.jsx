@@ -1,23 +1,20 @@
-import { useState } from 'react'
-import {Link} from 'react-router-dom'
-import PageAdminList from '../components/adminList/PageAdminList'
-import './AdminList.css'
-
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import PageAdminList from "../components/adminList/PageAdminList";
+import Footer from "../components/NavFooter/Footer";
+import Navbar from "../components/NavFooter/Navbar";
+import "./AdminList.css";
 
 function AdminList() {
-  
-
   return (
     <>
-    
-     <p>hola soy la pagina administracion de listas</p>
-    
-     <PageAdminList />
+      <Navbar />
 
+      <PageAdminList />
 
+      <Footer />
     </>
-  )
+  );
 }
 
-export default AdminList
+export default AdminList;

@@ -30,39 +30,46 @@ function ListAll({ onRowClick }) {
     //LLamo a getData() para traer los datos
     getData();
 
-    return (
-        <>
-            <section className='mostrarDatos'>
-                <section className="seccion_datos">
-                    <table id="tablaDatos" className="tablaDatos" >
-                        <thead className="tablaHead">
-                            <tr>
-                                <th name="celdaName" id="celdaNombre" >Nombre</th>
-                                <th name="celdaApellido1" id="celdaApellido">Apellido 1</th>
-                                <th name="celdaApellido2" id="celdaApellido2">Apellido 2</th>
-                                <th name="celdaRol" id="celdaEmail">Email</th>
-                                <th name="celdaClase" id="celdaTelefono">Teléfono</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                userListObject.map((user, index) => (
-                                    <tr key={index} id={index} onClick={() => onRowClick(user)}>
-                                        <th>{user.nombre}</th>
-                                        <th>{user.apellido}</th>
-                                        <th>{user.apellido2}</th>
-                                        <th>{user.email}</th>
-                                        <th>{user.telefono}</th>
-
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                </section>
-            </section>
-        </>
-    )
+  return (
+    <>
+      <section className="mostrarDatos">
+        <section className="seccion_datos">
+          <table id="tablaDatos" className="tablaDatos">
+            <thead className="tablaHead">
+              <tr>
+                <th name="celdaName" id="celdaNombre">
+                  Nombre
+                </th>
+                <th name="celdaApellido1" id="celdaApellido">
+                  Apellido 1
+                </th>
+                <th name="celdaApellido2" id="celdaApellido2">
+                  Apellido 2
+                </th>
+                <th name="celdaRol" id="celdaEmail">
+                  Email
+                </th>
+                <th name="celdaClase" id="celdaTelefono">
+                  Teléfono
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {userListObject.map((user, index) => (
+                <tr key={index} id={index} onClick={() => onRowClick(user)}>
+                  <th>{user.nombre}</th>
+                  <th>{user.apellido}</th>
+                  <th>{user.apellido2}</th>
+                  <th>{user.email}</th>
+                  <th>{user.telefono}</th>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      </section>
+    </>
+  );
 }
 
 export default ListAll

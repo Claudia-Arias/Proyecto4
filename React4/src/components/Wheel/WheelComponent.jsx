@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react'
 import { Wheel } from 'react-custom-roulette'
-import './WheelComponent.css';
+import swal from 'sweetalert'
+import './WheelComponent.css'
 
 function WheelComponent({ selectedUser }) {
   const data = [
@@ -91,9 +92,21 @@ function WheelComponent({ selectedUser }) {
         setMustSpin(true);
       }
     } else {
-      window.alert("El nº de alumnos seleccionados debe estar entre 2 y 20 incluidos, revise el nº de alumnos añádidos");
+      // window.alert("El nº de alumnos seleccionados debe estar entre 2 y 20 incluidos, revise el nº de alumnos añádidos");
+      modalBotones('¡Cuidado!', 'Debe seleccionar entre 2 y 10 alumnos', 'error', true);
     }
   }
+function modalBotones(titulo, texto, icono, danger) {
+        swal({
+            title: titulo,
+            text: texto,
+            icon: icono,
+            buttons: "Continuar",
+            dangerMode: danger,
+            closeOnClickOutside: false,
+            closeOnEsc: false,
+        });
+    };
 
   //console.log(selectedUserIds);
 
@@ -111,7 +124,8 @@ function WheelComponent({ selectedUser }) {
     //el sorteo solo se realiza si tenemos entre 2 y 10 usuarios seleccionados, comprobarlo, ya que si no es asi no tenemos nada que mostrar
     if (contador > 1 && contador < 11) {
       const seleccionado = getSelectedElement();//recuperamos id del alumno seleccionado
-      window.alert("el alumno seleccionado es: " + seleccionado.nombre+" "+seleccionado.apellido+" "+seleccionado.apellido2);
+      // window.alert("el alumno seleccionado es: " + seleccionado.nombre+" "+seleccionado.apellido+" "+seleccionado.apellido2);
+      modalBotones('El ganador es:', seleccionado.nombre+" "+seleccionado.apellido+" "+seleccionado.apellido2,  "success", false);
     }
   }
 
