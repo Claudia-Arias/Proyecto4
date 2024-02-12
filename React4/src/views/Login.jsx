@@ -1,27 +1,28 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import Home from './Home'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Home from "./Home";
 import "./login.css";
 import Footer from "../components/NavFooter/Footer";
-import Navbar from '../components/NavFooter/Navbar';
-
-
+import Navbar from "../components/NavFooter/Navbar";
 
 function Login() {
-
-
-const [textoBoton,setTextoBoton] =useState("Login");
-
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [textoBoton, setTextoBoton] = useState("Login");
 
   function handleLogin() {
-    setTextoBoton("hola");
-
-
+    if (username === "usuarioValido" && password === "contraseñaValida") {
+      setTextoBoton("hola");
+      setError("");
+    } else {
+      setError("Usuario o contraseña incorrectos");
+    }
   }
   return (
     <>
-    <Navbar />
-   
+      <Navbar />
+
       <div className="loginname">
         <h2>Wheel of Doom</h2>
         <form>
@@ -31,17 +32,29 @@ const [textoBoton,setTextoBoton] =useState("Login");
           </div>
           <div className="logincontraseña">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" required></input>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+            ></input>
           </div>
-          <button className= "buttonLogin" text="login" type="button" onClick= {handleLogin}><Link to="/Home">{textoBoton}</Link></button>
-          
+          <button
+            className="buttonLogin"
+            text="login"
+            type="button"
+            onClick={handleLogin}
+          >
+            {textoBoton}
+            {/* <Link to="/Home">{textoBoton}</Link> */}
+          </button>
+          {error && <p className="error">{error}</p>}
         </form>
       </div>
-    
-    <Footer/>
-     
+
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Login
+export default Login;
