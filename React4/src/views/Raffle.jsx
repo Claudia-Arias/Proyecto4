@@ -1,5 +1,5 @@
 import WheelComponent from '../components/Wheel/WheelComponent'
-import ListAll from '../components/ListAll/ListAll'
+import ListAll from '../components/listAll/ListAll'
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 
