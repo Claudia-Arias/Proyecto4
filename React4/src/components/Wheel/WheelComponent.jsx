@@ -14,10 +14,13 @@ function WheelComponent({ selectedUser }) {
   const [objetoDato, setObjetoDato] = useState({ option: '' });
 
   const [selectedUserIds, setSelectedUserIds] = useState([objetoDato]);//array donde guardamos los id de los usuarios seleccionados
+  //ademas de guardar el id de los seleccionador vamos a guardar el resto de datos para luego poder mostrar el ganador
+  const [userList, setUserList] = useState([]);
 
   const [primero, SetPrimero] = useState(true);
 
   const [contador, setContador] = useState(0);
+
 
   // //Del Repositorio de la ruleta
   // interface WheelData {
@@ -65,6 +68,8 @@ function WheelComponent({ selectedUser }) {
 
     if ((selectedUser.id != '77')) {
       setObjetoDato({ option: selectedUser.id });
+      //guardamos los datos del alumno seleccionado en el array auxiliar
+      setUserList(prevList => [...prevList, selectedUser]);
     }
   }, [selectedUser]);
 
@@ -95,8 +100,8 @@ function WheelComponent({ selectedUser }) {
   const getSelectedElement = () => {
 
     if (selectedUserIds && selectedUserIds.length > 0) {
-      return selectedUserIds[prizeNumber].option;
-
+      let idSeleccionado =  selectedUserIds[prizeNumber].option;
+      return userList.find(userList => userList.id === idSeleccionado);
     }
     return null;
   }
@@ -105,7 +110,7 @@ function WheelComponent({ selectedUser }) {
     //el sorteo solo se realiza si tenemos entre 2 y 10 usuarios seleccionados, comprobarlo, ya que si no es asi no tenemos nada que mostrar
     if (contador > 1 && contador < 11) {
       const seleccionado = getSelectedElement();//recuperamos id del alumno seleccionado
-      window.alert("el alumno seleccionado es: " + seleccionado);
+      window.alert("el alumno seleccionado es: " + seleccionado.nombre+" "+seleccionado.apellido+" "+seleccionado.apellido2);
     }
   }
 
