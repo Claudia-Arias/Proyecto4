@@ -70,10 +70,13 @@ function Login() {
   const [textoBoton, setTextoBoton] = useState("Login");
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [password, setPassword] = useState("");
+  //const [userName, setUserName] = useState("");
 
   const handlePasswordChange = (event) => {
     const maxLength = 5;
-    const password = event.target.value.slice(0, maxLength);
+    const newPassword = event.target.value.slice(0, maxLength);
+    setPassword(newPassword);
     setPasswordError("");
   };
   function handleLogin(e) {
@@ -115,7 +118,7 @@ function Login() {
           </div>
           <div className="logincontraseña">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" required />
+            <input type="password" id="password" name="password" required value={password} onChange={handlePasswordChange} />
             {passwordError && <small style={{color: 'red'}}>{passwordError}</small>}
           </div>
           <button
