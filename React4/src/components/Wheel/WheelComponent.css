@@ -74,9 +74,26 @@
     -webkit-animation: spin 2s infinite linear; /* Safari */
     animation: spin 2s infinite linear;
     background-color: aqua;
+    width:50px;
+    height:50px;
   }
   
   .mostrarRuleta {
     display: flex;
     flex-direction: column;
+    
   }
+
+  .bhdLno {
+    position: relative;
+    width: 12vw;
+    max-width: 445px;
+    height: 25vw;
+    max-height: 445px;
+    object-fit: contain;
+    flex-shrink: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+       

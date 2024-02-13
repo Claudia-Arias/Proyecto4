@@ -67,7 +67,7 @@ function ListAll({ onRowClick }) {
 
   return (
     <>
-      <section className="mostrarDatos">
+      <section className="mostrarDatos2">
         <section className="seccion_datos">
           <table id="tablaDatos" className="tablaDatos">
             <thead className="tablaHead">

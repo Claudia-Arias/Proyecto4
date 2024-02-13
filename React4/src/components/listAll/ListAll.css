@@ -1,6 +1,6 @@
-.mostrarDatos {
+.mostrarDatos2 {
   overflow-x: auto; /* Agrega barra de desplazamiento horizontal si es necesario */
-  overflow-y: auto; /* Agrega barra de desplazamiento vertical si es necesario */
+  overflow-y: auto; /*Agrega barra de desplazamiento vertical si es necesario*/
   margin-right: 2%;
 }
 
@@ -15,7 +15,7 @@ th {
   border: solid 2px black;
   padding: 0;
   overflow-x: auto;
-  overflow-y: auto;
+  /* overflow-y: auto; */ 
   max-height: 500px;
 }
 
@@ -92,6 +92,22 @@ td {
 }
 
 @media screen and (max-width: 430px) {
+
+  .mostrarDatos2{
+  
+    width:275px;
+    /* height:200px; */
+    overflow-y:hidden;
+    margin-bottom:50px;
+    
+  }
+  .seccion_datos {
+    border: solid 2px black;
+    padding: 0;
+    overflow-x: auto; 
+   /* overflow-y: auto; */
+  }
+
   .form_content {
     display: flex;
     flex-direction: column;
@@ -102,11 +118,11 @@ td {
     padding-bottom: 1%; */
     /* height: fit-content; */
     margin: 10%;
-    background-color:red;
+
   }
 }
 
 
 
 
-}
+
