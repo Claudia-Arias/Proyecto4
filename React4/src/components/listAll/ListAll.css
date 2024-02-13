@@ -94,7 +94,7 @@ td {
 @media screen and (max-width: 430px) {
 
   .mostrarDatos2{
-    background-color:purple;
+  
     width:275px;
     /* height:200px; */
     overflow-y:hidden;
@@ -106,7 +106,7 @@ td {
     padding: 0;
     overflow-x: auto; 
    /* overflow-y: auto; */
-    
+  }
 
   .form_content {
     display: flex;
@@ -121,7 +121,7 @@ td {
 
   }
 }
-}
+
 
 
 

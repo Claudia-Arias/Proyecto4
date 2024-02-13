@@ -9,7 +9,8 @@
  }
  .contenedorPrincipal {
     position: relative; /* Establecemos la posición relativa para que los hijos con posición sticky sean relativos a este contenedor */
-  }
+
+   }
   .superior {
     
     top: 0; /* Fijamos el componente superior en la parte superior del contenedor */
@@ -20,26 +21,29 @@
 
  @media screen and ( max-width:430px) {
     .mostrarRuletaTabla{
-        padding-top:140px;
+        padding-top:540px;
         display: flex;
         gap: 10%; 
-        /* overflow-x: auto;  */
+        overflow-y: auto; 
         flex-direction:column;
         align-items:center;
         z-index: 1;
-        
      }
      body{
-        overflow-y:hidden;
+        /* overflow-y:hidden; */
      }
-     /* .containerRight{
+     .containerRight{
         overflow-x: auto;
         overflow-y: auto;
-     } */
-    
+        background-color: greenyellow;
+     }
+     .contenedorPrincipal {
+      position: relative; /* Establecemos la posición relativa para que los hijos con posición sticky sean relativos a este contenedor */
+     display: flex;
+     flex-direction: column;
+     }
  }
 
       
-       
 
    

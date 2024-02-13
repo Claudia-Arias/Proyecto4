@@ -83,3 +83,17 @@
     flex-direction: column;
     
   }
+
+  .bhdLno {
+    position: relative;
+    width: 12vw;
+    max-width: 445px;
+    height: 25vw;
+    max-height: 445px;
+    object-fit: contain;
+    flex-shrink: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+       
