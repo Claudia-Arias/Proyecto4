@@ -88,7 +88,7 @@ tbody tr:active {
 
 th,
 td {
-  width: 1%; /* Dividir igualmente en tres columnas */
+  width: 1%; 
 }
 
 @media screen and (max-width: 430px) {
@@ -96,11 +96,17 @@ td {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    width: 98%;
-    padding-top: 2%;
-    padding-left: 0.5%;
-    padding-bottom: 1%;
-    height: fit-content;
-    margin: 1%;
+    width: 40%;
+    /* padding-top: 2%; */
+    /* padding-left: 0.5%;
+    padding-bottom: 1%; */
+    /* height: fit-content; */
+    margin: 10%;
+    background-color:red;
   }
+}
+
+
+
+
 }
