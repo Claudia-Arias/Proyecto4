@@ -187,9 +187,9 @@ th, td {
         display:flex;
         flex-direction: column;
         gap:50px;
-        width: 100%;
+        width: 40%;
         padding-top: 40%;
-        padding-left: 20%; 
+        padding-left: 30%; 
         padding-bottom: 1%;
         height:fit-content;
         margin: 1%;
@@ -220,9 +220,9 @@ th, td {
         display:flex;
         flex-direction: column;
         gap:50px;
-        width: 100%;
+        width: 40%;
         padding-top: 65%;
-        padding-left: 20%; 
+        padding-left: 30%; 
         padding-bottom: 10%;
         height:fit-content;
         margin: 1%;
