@@ -1,4 +1,45 @@
+
 .mostrarRuletaTabla{
     display: flex;
-    gap: 10%;
-}
+    gap: 10%; 
+    /* position: sticky; */
+
+  
+    
+ }
+ .contenedorPrincipal {
+    position: relative; /* Establecemos la posición relativa para que los hijos con posición sticky sean relativos a este contenedor */
+  }
+  .superior {
+    
+    top: 0; /* Fijamos el componente superior en la parte superior del contenedor */
+    background-color: #f0f0f0; /* Agregamos un color de fondo para distinguirlo */
+    z-index: 2; /* Aseguramos que el componente superior esté por encima del componente inferior */
+  }
+
+
+ @media screen and ( max-width:430px) {
+    .mostrarRuletaTabla{
+        padding-top:140px;
+        display: flex;
+        gap: 10%; 
+        /* overflow-x: auto;  */
+        flex-direction:column;
+        align-items:center;
+        z-index: 1;
+        
+     }
+     body{
+        overflow-y:hidden;
+     }
+     /* .containerRight{
+        overflow-x: auto;
+        overflow-y: auto;
+     } */
+    
+ }
+
+      
+       
+
+   

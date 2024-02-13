@@ -26,9 +26,12 @@ function Raffle() {
 
     return (
       <>
+      <div className= "contenedorPrincipal">
+        <div className="superior">
       <Navbar />
+      </div>
       <div className='mostrarRuletaTabla'>
-      <WheelComponent selectedUser={selectedUser} />
+          <WheelComponent selectedUser={selectedUser} />
         <div className='container'>
           <div className='containerLeft'>
             <button type="button" ><Link to="/AdminList">Administrar Lista</Link></button>
@@ -38,7 +41,8 @@ function Raffle() {
           </div>
         </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
+        </div>
       </>
     )
   }
