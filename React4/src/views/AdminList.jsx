@@ -12,7 +12,7 @@ function AdminList() {
 
       <PageAdminList />
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
