@@ -8,7 +8,7 @@ import "./AdminList.css";
 function AdminList() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
 
       <PageAdminList />
 
