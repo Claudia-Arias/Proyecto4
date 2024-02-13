@@ -40,3 +40,14 @@
 .redesSociales img:hover{
     transform: scale(1.1);
 }
+@media screen and (max-width: 430px) {
+      
+.copyR{
+display: none;
+}
+.textoFooter{
+    display: none;
+    }
+}
+
+    

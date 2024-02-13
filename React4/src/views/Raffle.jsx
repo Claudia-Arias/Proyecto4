@@ -40,8 +40,9 @@ function Raffle() {
               <ListAll onRowClick={handleRowClick} />
             </div>
           </div>
+          <Footer/>
         </div>
-        {/* <Footer /> */}
+        
       </div>
     </>
   )
