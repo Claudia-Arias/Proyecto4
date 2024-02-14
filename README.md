@@ -1,6 +1,7 @@
-# La Wheel of Doom del cole 
+La Wheel of Doom del cole 
+![logo](https://github.com/Claudia-Arias/Proyecto4/assets/153823346/3ec2f6d5-3562-4b0b-ae2e-97efe5d33fe1)
 
-/*![Logo](/src/components/images/logo.png)*/
+
 
 Contexto del proyecto
 Tu consultora tiene un nuevo encargo con la institución educativa para la que estáis desarrollando una aplicación de uso interno. Quieren añadir a su plataforma una vista en la que realizar un sorteo para elegir un "voluntario" entre una lista de participantes. Esta vez es una interfaz que usarán de modo lúdico, compartiendo la pantalla en una clase o reunión para decidir tareas desagradecidas como quién se encarga de una presentación, a quién le toca velar por el orden en los pasillos, qué profesores llevan de excursión a los alumnos, etc.
