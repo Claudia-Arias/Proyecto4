@@ -12,7 +12,6 @@
     padding: 20px;
     background-color: cornflowerblue;
     border: solid black 2px;
-    border-radius: 10px;
     color: white;
 }
 
@@ -23,7 +22,7 @@
 }
 
 .copyR p{
-    font-size: 14px;
+    font-size: 1vh;
     font-family: cursive;
 }
 

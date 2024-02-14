@@ -1,14 +1,40 @@
-.container{
-    display: flex;
-    flex-direction:row;
 
-    width: 100%;
-}
-
-.containerLeft{
-    background-color: blue;
-}
-
-.containerRight{
-    background-color: crimson;
-}
+.contenido {
+    text-align: center; 
+    color: cornflowerblue; 
+    gap: 50px;
+  }
+  
+  .boton {
+    margin-right: 50px; 
+    margin-bottom: 50px;
+    font-size: 46px;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: pink;
+    width: 500px; 
+    height: 150px; 
+    border-radius: 50px;
+  }
+  
+  .boton:hover{
+      background-color: rgb(252,239,124);
+  }
+  
+  @media screen and ( max-width:430px) {
+    .boton {
+        margin-right: 50px; 
+        margin-bottom: 50px;
+        font-size: 26px;
+        text-align: center;
+        padding: 10px 20px;
+        background-color: pink;
+        width: 250px; 
+        height: 90px; 
+        border-radius: 50px;
+      }
+      .contenido h1{
+        font-size:32px;
+      }
+      
+  }
